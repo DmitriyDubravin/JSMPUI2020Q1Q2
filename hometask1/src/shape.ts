@@ -18,7 +18,7 @@ export default abstract class Shape {
   constructor();
   constructor(color: string, filled: boolean);
   constructor(color?: string, filled?: boolean) {
-    if (color !== undefined && filled !== undefined) {
+    if (color && filled !== undefined) {
       this._color = color;
       this._filled = filled;
     } else {
