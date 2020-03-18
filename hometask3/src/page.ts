@@ -1,8 +1,10 @@
+import { PageTypes, PageMaterials } from "./enums";
+
 export default class Page {
   constructor(
     private pageNumber: number,
-    private pageType: string,
-    private pageMaterial: string
+    private pageType: PageTypes,
+    private pageMaterial: PageMaterials
   ) {}
 
   toString() {
