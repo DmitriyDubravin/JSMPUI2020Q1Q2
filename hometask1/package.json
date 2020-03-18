@@ -9,6 +9,7 @@
     "server": "webpack-dev-server --open"
   },
   "dependencies": {
+    "minimist": "^1.2.5",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.2",
     "webpack": "^4.41.6",
