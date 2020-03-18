@@ -1,0 +1,30 @@
+{
+  "name": "hometask2",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run server && npm run watch",
+    "watch": "webpack --watch",
+    "server": "webpack-dev-server --open",
+    "test": "jest",
+    "test-watch": "jest --watchAll --verbose",
+    "test-coverage": "jest --watchAll --coverage",
+    "lint": "tslint"
+  },
+  "dependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "ts-loader": "^6.2.1",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.41.6",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  }
+}
