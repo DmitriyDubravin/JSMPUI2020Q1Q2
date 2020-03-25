@@ -36,8 +36,6 @@ const shipment3 = new Shipment(
   16
 );
 
-// new Letter(args)
-
 console.log(shipment1.ship());
 console.log(shipment2.ship());
 console.log(shipment3.ship());
