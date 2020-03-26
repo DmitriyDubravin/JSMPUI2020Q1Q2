@@ -5,20 +5,19 @@ import {
   ReturnShipment
 } from "./decorators";
 
-const shipment1 = new ReturnShipment(
-  new FragileShipment(
-    new DontLeaveShipment(
-      new Shipment(
-        0,
-        "1313 Mockingbird Lane, Tulsa, OK",
-        "12292 4th Ave SE, Bellevue, Wa",
-        17721,
-        12021,
-        180
-      )
-    )
-  )
+const shipment = new Shipment(
+  0,
+  "1313 Mockingbird Lane, Tulsa, OK",
+  "12292 4th Ave SE, Bellevue, Wa",
+  17721,
+  12021,
+  180
 );
+
+const fragileShipment = new FragileShipment(shipment);
+const returnShipment = new ReturnShipment(fragileShipment);
+const shipment1 = new DontLeaveShipment(returnShipment);
+
 const shipment2 = new Shipment(
   123,
   "1313 Mockingbird Lane, Tulsa, OK",
@@ -27,6 +26,7 @@ const shipment2 = new Shipment(
   42021,
   15
 );
+
 const shipment3 = new Shipment(
   0,
   "1313 Mockingbird Lane, Tulsa, OK",

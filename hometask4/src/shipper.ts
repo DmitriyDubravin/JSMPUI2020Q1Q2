@@ -14,7 +14,7 @@ const roundPrice = (price: number) => {
 
 export class AirEastShipper implements Shipper {
   getCost(weight: number, type: string): number {
-    let prices: Prices = {
+    const prices: Prices = {
       [ShipmentTypes.Letter]: () => weight * 0.39,
       [ShipmentTypes.Package]: () => weight * 0.25,
       [ShipmentTypes.Oversized]: () => weight * 0.25 + 10
@@ -25,7 +25,7 @@ export class AirEastShipper implements Shipper {
 
 export class ChicagoSprintShipper implements Shipper {
   getCost(weight: number, type: string): number {
-    let prices: Prices = {
+    const prices: Prices = {
       [ShipmentTypes.Letter]: () => weight * 0.42,
       [ShipmentTypes.Package]: () => weight * 0.2,
       [ShipmentTypes.Oversized]: () => weight * 0.2
@@ -36,7 +36,7 @@ export class ChicagoSprintShipper implements Shipper {
 
 export class PacificParcelShipper implements Shipper {
   getCost(weight: number, type: string): number {
-    let prices: Prices = {
+    const prices: Prices = {
       [ShipmentTypes.Letter]: () => weight * 0.51,
       [ShipmentTypes.Package]: () => weight * 0.19,
       [ShipmentTypes.Oversized]: () => weight * 0.19 + weight * 0.02
