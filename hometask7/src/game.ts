@@ -27,24 +27,18 @@ export class Game {
 
   private roll() {
     const roll = this.generateRoll();
-    const isEven = checkEven(roll);
 
-    if (this.player.inPenaltyBox && isEven) {
-      this.player.staysInPenalty();
-    }
-
-    if (this.player.inPenaltyBox && !isEven) {
+    if (this.player.inPenaltyBox) {
+      if (checkEven(roll)) {
+        this.player.staysInPenalty();
+        this.nextTurn();
+        return;
+      }
       this.player.goesOutOfPenalty();
     }
 
-    if (this.player.inPenaltyBox) {
-      this.nextTurn();
-      return;
-    }
-
     this.player.setPlace(roll);
-    this.questionnaire.setCategory(this.player.place);
-    this.questionnaire.askQuestion();
+    this.questionnaire.setCategory(this.player.place).askQuestion();
     this.questionnaire.evaluateAnswer()
       ? this.wrongAnswer()
       : this.correctAnswer();

@@ -16,10 +16,7 @@ export class Questionnaire {
 
   generateQuestionsSet() {
     const questions: QuestionsSet = this.categories.reduce(
-      (acc: QuestionsSet, category: string) => {
-        acc[category] = [];
-        return acc;
-      },
+      (acc: QuestionsSet, category: string) => ({ ...acc, [category]: [] }),
       {}
     );
     for (let i = this.questionsQuantity; i > 0; i--) {
@@ -39,6 +36,7 @@ export class Questionnaire {
 
   setCategory(number: number) {
     this.currentCategory = this.categories[number % this.categories.length];
+    return this;
   }
 
   getCategory(): string {

@@ -31,11 +31,11 @@ export class Player {
     return this._inPenaltyBox;
   }
   setPlace(roll: number) {
-    this.place = this._place + roll;
+    this._place = this._place + roll;
     logger.newLocation(this);
   }
   addCoin() {
-    this.purse = this._purse + 1;
+    this._purse = this._purse + 1;
     logger.has(this);
   }
   staysInPenalty() {
