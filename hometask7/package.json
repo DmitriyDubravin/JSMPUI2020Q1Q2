@@ -1,0 +1,42 @@
+{
+  "main": "src/game-runner.ts",
+  "scripts": {
+    "start": "ts-node src/game-runner.ts",
+    "test": "jest",
+    "test-watch": "jest --watchAll --verbose",
+    "test-coverage": "jest --watchAll --coverage"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "typings"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "text",
+      "html"
+    ]
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "babel-jest": "^25.3.0",
+    "jest": "^25.3.0",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nyc": "^15.0.0",
+    "sinon": "^8.1.1",
+    "ts-node": "^8.6.2"
+  }
+}
